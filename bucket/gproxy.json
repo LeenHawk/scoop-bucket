@@ -1,0 +1,38 @@
+{
+    "version": "4.1.14",
+    "description": "Open-source AI API gateway, command-line edition with the built-in web console",
+    "homepage": "https://gproxy.leenhawk.com/",
+    "license": "AGPL-3.0-or-later",
+    "notes": [
+        "GPROXY keeps its data in a directory relative to where it is started unless told otherwise.",
+        "Until a release detects Scoop installs, start it with --data-dir \"$env:LOCALAPPDATA\\GPROXY\" (or set GPROXY_DATA_DIR).",
+        "Update with `scoop update`; `gproxy update` would replace the file inside Scoop's directory."
+    ],
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/LeenHawk/gproxy/releases/download/v4.1.14/gproxy-windows-x86_64.zip",
+            "hash": "90379b2664dd61a4fc4ad394689ac985468afe2cd2cb907d1fa06a8e64de086e"
+        },
+        "arm64": {
+            "url": "https://github.com/LeenHawk/gproxy/releases/download/v4.1.14/gproxy-windows-aarch64.zip",
+            "hash": "de6ed46774465bbb8b115399cf38bec2d8e1f39f6a82f272709ab49a3aa68927"
+        }
+    },
+    "bin": "gproxy.exe",
+    "checkver": {
+        "github": "https://github.com/LeenHawk/gproxy"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/LeenHawk/gproxy/releases/download/v$version/gproxy-windows-x86_64.zip"
+            },
+            "arm64": {
+                "url": "https://github.com/LeenHawk/gproxy/releases/download/v$version/gproxy-windows-aarch64.zip"
+            }
+        },
+        "hash": {
+            "url": "$baseurl/SHA256SUMS"
+        }
+    }
+}

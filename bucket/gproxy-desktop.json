@@ -1,0 +1,41 @@
+{
+    "version": "4.1.14",
+    "description": "Open-source AI API gateway, desktop application with a setup wizard and management window",
+    "homepage": "https://gproxy.leenhawk.com/",
+    "license": "AGPL-3.0-or-later",
+    "notes": [
+        "GPROXY Desktop needs the Microsoft Edge WebView2 Runtime, which Windows 11 includes."
+    ],
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/LeenHawk/gproxy/releases/download/v4.1.14/gproxy-tauri-windows-x86_64.zip",
+            "hash": "9845986ee0f810dbf3bef946fc95030ec3f18cda5e6caa00d3a3588d3a42aef1"
+        },
+        "arm64": {
+            "url": "https://github.com/LeenHawk/gproxy/releases/download/v4.1.14/gproxy-tauri-windows-aarch64.zip",
+            "hash": "06e8cda861aba032a319dd551d5fe6ab9d18b2e3dfe225a56672c0eb20db27a1"
+        }
+    },
+    "shortcuts": [
+        [
+            "gproxy-desktop.exe",
+            "GPROXY Desktop"
+        ]
+    ],
+    "checkver": {
+        "github": "https://github.com/LeenHawk/gproxy"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/LeenHawk/gproxy/releases/download/v$version/gproxy-tauri-windows-x86_64.zip"
+            },
+            "arm64": {
+                "url": "https://github.com/LeenHawk/gproxy/releases/download/v$version/gproxy-tauri-windows-aarch64.zip"
+            }
+        },
+        "hash": {
+            "url": "$baseurl/SHA256SUMS"
+        }
+    }
+}
